@@ -110,6 +110,7 @@ require('packer').startup(function(use)
   use 'PProvost/vim-ps1'
   use 'rust-lang/rust.vim'
   use 'tomlion/vim-solidity'
+  use 'NoahTheDuke/vim-just'
   -- use { 'unisonweb/unison', tag = 'latest', rtp = 'editor-support/vim' }
   use 'ziglang/zig.vim'
 
