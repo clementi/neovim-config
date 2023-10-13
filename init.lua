@@ -90,18 +90,22 @@ require('packer').startup(function(use)
   use 'github/copilot.vim'
   use 'jiangmiao/auto-pairs'
   use 'mattn/emmet-vim'
-  use 'nvim-lualine/lualine.nvim'
+  -- use 'nvim-lualine/lualine.nvim'
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'preservim/nerdcommenter'
   use 'tpope/vim-surround'
   use { 'wfxr/minimap.vim', ["do"] = ':!cargo binstall --locked code-minimap' }
   use { 'nvim-treesitter/nvim-treesitter', ["do"] = ':TSUpdate' }
+  use 'vim-airline/vim-airline'
+  use 'vim-airline/vim-airline-themes'
 
   -- Color Schemes
-  -- use 'rafi/awesome-vim-colorschemes'
+  use 'rafi/awesome-vim-colorschemes'
   -- use { "catppuccin/nvim", as = "catppuccin" }
-  use { "folke/tokyonight.nvim" }
+  -- use "folke/tokyonight.nvim"
+  -- use "rebelot/kanagawa.nvim"
+  -- use 'jacoborus/tender.vim'
 
   -- Languages
   use 'cespare/vim-toml'
@@ -121,19 +125,23 @@ require('packer').startup(function(use)
   end
 
   require('nvim-tree').setup()
-  require('lualine').setup({
-    tabline = {
-      lualine_a = {'buffers'},
-      lualine_b = {'branch'},
-      lualine_c = {'filename'},
-      lualine_x = {},
-      lualine_y = {},
-      lualine_z = {'tabs'}
-    }
-  })
+  -- require('lualine').setup({
+    -- tabline = {
+      -- lualine_a = {'buffers'},
+      -- lualine_b = {'branch'},
+      -- lualine_c = {'filename'},
+      -- lualine_x = {},
+      -- lualine_y = {},
+      -- lualine_z = {'tabs'}
+    -- }
+  -- })
 end)
 
-cmd.colorscheme 'tokyonight-night'
+cmd.colorscheme 'hybrid'
+
+g["airline#extensions#tabline#enabled"] = 1
+g.airline_powerline_fonts = 1
+g.airline_theme='hybridline'
 
 g.NERDSpaceDelims = 1
 g.NERDCustomDelimiters = {
