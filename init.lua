@@ -96,10 +96,12 @@ require('packer').startup(function(use)
   use 'preservim/nerdcommenter'
   use 'tpope/vim-surround'
   use { 'wfxr/minimap.vim', ["do"] = ':!cargo binstall --locked code-minimap' }
+  use { 'nvim-treesitter/nvim-treesitter', ["do"] = ':TSUpdate' }
 
   -- Color Schemes
   -- use 'rafi/awesome-vim-colorschemes'
-  use { "catppuccin/nvim", as = "catppuccin" }
+  -- use { "catppuccin/nvim", as = "catppuccin" }
+  use { "folke/tokyonight.nvim" }
 
   -- Languages
   use 'cespare/vim-toml'
@@ -131,7 +133,7 @@ require('packer').startup(function(use)
   })
 end)
 
-cmd.colorscheme 'catppuccin'
+cmd.colorscheme 'tokyonight-night'
 
 g.NERDSpaceDelims = 1
 g.NERDCustomDelimiters = {
