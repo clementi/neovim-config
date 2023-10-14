@@ -95,7 +95,7 @@ require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
   use 'preservim/nerdcommenter'
   use 'tpope/vim-surround'
-  use { 'wfxr/minimap.vim', ["do"] = ':!cargo binstall --locked code-minimap' }
+  -- use { 'wfxr/minimap.vim', ["do"] = ':!cargo binstall --locked code-minimap' }
   use { 'nvim-treesitter/nvim-treesitter', ["do"] = ':TSUpdate' }
   use 'vim-airline/vim-airline'
   use 'vim-airline/vim-airline-themes'
