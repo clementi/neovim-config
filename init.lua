@@ -69,88 +69,25 @@ map('n', '<Right>', '<Nop>')
 
 map('n', '<leader>s', ':lua remove_trailing_whitespace()<CR>', { desc = 'Remove trailing whitespace' })
 
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system({
-    'git',
-    'clone',
-    '--depth', '1',
-    'https://github.com/wbthomason/packer.nvim',
-    install_path
-  })
-end
-
-require('packer').startup(function(use)
-  use "wbthomason/packer.nvim"
-
-  -- Tools & Settings
-  use 'airblade/vim-gitgutter'
-  use 'editorconfig/editorconfig-vim'
-  use 'github/copilot.vim'
-  use 'jiangmiao/auto-pairs'
-  use 'mattn/emmet-vim'
-  -- use 'nvim-lualine/lualine.nvim'
-  use 'nvim-tree/nvim-tree.lua'
-  use 'nvim-tree/nvim-web-devicons'
-  use 'preservim/nerdcommenter'
-  use 'tpope/vim-surround'
-  -- use { 'wfxr/minimap.vim', ["do"] = ':!cargo binstall --locked code-minimap' }
-  use { 'nvim-treesitter/nvim-treesitter', ["do"] = ':TSUpdate' }
-  use 'vim-airline/vim-airline'
-  use 'vim-airline/vim-airline-themes'
-
-  -- Color Schemes
-  use 'rafi/awesome-vim-colorschemes'
-  -- use { "catppuccin/nvim", as = "catppuccin" }
-  -- use "folke/tokyonight.nvim"
-  -- use "rebelot/kanagawa.nvim"
-  -- use 'jacoborus/tender.vim'
-
-  -- Languages
-  use 'cespare/vim-toml'
-  use 'fatih/vim-go'
-  use 'leafgarland/typescript-vim'
-  use 'neovimhaskell/haskell-vim'
-  use 'pangloss/vim-javascript'
-  use 'PProvost/vim-ps1'
-  use 'rust-lang/rust.vim'
-  use 'tomlion/vim-solidity'
-  use 'NoahTheDuke/vim-just'
-  -- use { 'unisonweb/unison', tag = 'latest', rtp = 'editor-support/vim' }
-  use 'ziglang/zig.vim'
-
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-
-  require('nvim-tree').setup()
-  -- require('lualine').setup({
-    -- tabline = {
-      -- lualine_a = {'buffers'},
-      -- lualine_b = {'branch'},
-      -- lualine_c = {'filename'},
-      -- lualine_x = {},
-      -- lualine_y = {},
-      -- lualine_z = {'tabs'}
-    -- }
-  -- })
-end)
+require('config.lazy')
 
 cmd.colorscheme 'hybrid'
 
-g["airline#extensions#tabline#enabled"] = 1
-g.airline_powerline_fonts = 1
-g.airline_theme='hybridline'
+require('lualine').setup {
+  options = {
+    theme = 'jellybeans'
+  }
+}
 
 g.NERDSpaceDelims = 1
 g.NERDCustomDelimiters = {
-  fstar = { left = '(*', right = '*)' },
-  jsonc = { left = '//', right = '' },
-  qs = { left = '//', right = '' }
+  jsonc = { left = '//', right = '' }
 }
 g.user_emmet_leader_key = '<C-Z>'
 
-g.minimap_auto_start = 1
-
--- cmd ":NvimTreeOpen"
+if vim.g.neovide then
+  vim.o.guifont = "JetBrains Mono"
+  vim.g.neovide_position_animation_length = 0
+  vim.g.neovide_cursor_animation_length = 0
+  vim.g.neovide_scroll_animation_length = 0
+end
