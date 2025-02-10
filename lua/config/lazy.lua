@@ -44,7 +44,7 @@ require("lazy").setup({
             'c', 'cpp', 'lua', 'vim', 'vimdoc',
             'javascript', 'html', 'scala', 'java',
             'typescript', 'haskell', 'python',
-            'xml', 'json',
+            'xml', 'json', 'jsonc',
           },
           sync_install = false,
           highlight = { enable = true },
