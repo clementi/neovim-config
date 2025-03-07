@@ -31,6 +31,17 @@ require("lazy").setup({
     { 'mattn/emmet-vim' },
     { 'preservim/nerdcommenter' },
     { 'tpope/vim-surround' },
+    { 'mistweaverco/kulala.nvim',
+      keys = {
+        { "<leader>Rs", desc = "Send request" },
+        { "<leader>Ra", desc = "Send all requests" },
+        { "<leader>Rb", desc = "Open scratchpad" },
+      },
+      ft = {"http", "rest"},
+      opts = {
+        global_keymaps = true,
+      },
+    },
     { 'nvim-lualine/lualine.nvim',
       dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
