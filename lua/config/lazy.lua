@@ -43,7 +43,15 @@ require("lazy").setup({
       },
     },
     { 'nvim-lualine/lualine.nvim',
-      dependencies = { 'nvim-tree/nvim-web-devicons' }
+      dependencies = { 
+        'nvim-tree/nvim-web-devicons', 
+        'nanotech/jellybeans.vim',
+      },
+      config = function()
+        require('lualine').setup({
+          theme = 'auto'
+        })
+      end
     },
     { 'nvim-treesitter/nvim-treesitter',
       build = ':TSUpdate',
@@ -79,7 +87,6 @@ require("lazy").setup({
         })
       end
     },
-    { 'rafi/awesome-vim-colorschemes' },
     { 'leafgarland/typescript-vim' },
     { 'kaicataldo/material.vim' },
     { 'neovimhaskell/haskell-vim' },
