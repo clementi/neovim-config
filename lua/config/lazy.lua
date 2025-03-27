@@ -89,6 +89,7 @@ require("lazy").setup({
     },
     { 'leafgarland/typescript-vim' },
     { 'kaicataldo/material.vim' },
+    { 'EdenEast/nightfox.nvim' },
     { 'neovimhaskell/haskell-vim' },
     { 'pangloss/vim-javascript' },
   },
