@@ -87,6 +87,7 @@ require("lazy").setup({
         })
       end
     },
+    { 'romgrk/barbar.nvim' },
     { 'leafgarland/typescript-vim' },
     { 'kaicataldo/material.vim' },
     { 'EdenEast/nightfox.nvim' },
