@@ -93,6 +93,7 @@ require("lazy").setup({
     { 'EdenEast/nightfox.nvim' },
     { 'neovimhaskell/haskell-vim' },
     { 'pangloss/vim-javascript' },
+    { 'stefanos82/nelua.vim' },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
