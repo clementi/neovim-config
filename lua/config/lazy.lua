@@ -44,8 +44,7 @@ require("lazy").setup({
     },
     { 'nvim-lualine/lualine.nvim',
       dependencies = { 
-        'nvim-tree/nvim-web-devicons', 
-        'nanotech/jellybeans.vim',
+        'nvim-tree/nvim-web-devicons'
       },
       config = function()
         require('lualine').setup({
@@ -90,7 +89,8 @@ require("lazy").setup({
     { 'romgrk/barbar.nvim' },
     { 'leafgarland/typescript-vim' },
     { 'kaicataldo/material.vim' },
-    { 'EdenEast/nightfox.nvim' },
+    -- { 'EdenEast/nightfox.nvim' },
+    { 'joshdick/onedark.vim' },
     { 'neovimhaskell/haskell-vim' },
     { 'pangloss/vim-javascript' },
     { 'stefanos82/nelua.vim' },
