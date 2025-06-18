@@ -31,6 +31,10 @@ require("lazy").setup({
     { 'mattn/emmet-vim' },
     { 'preservim/nerdcommenter' },
     { 'tpope/vim-surround' },
+    { 'ibhagwan/fzf-lua',
+      dependencies = { 'nvim-tree/nvim-web-devicons' },
+      opts = {},
+    },
     { 'mistweaverco/kulala.nvim',
       keys = {
         { "<leader>Rs", desc = "Send request" },
@@ -69,6 +73,7 @@ require("lazy").setup({
             'json',
             'jsonc',
             'lua',
+            'nu',
             'python',
             'racket',
             'rust',
