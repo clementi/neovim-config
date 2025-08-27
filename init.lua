@@ -71,7 +71,7 @@ map('n', '<leader>s', ':lua remove_trailing_whitespace()<CR>', { desc = 'Remove 
 
 require('config.lazy')
 
-cmd.colorscheme 'onedark'
+cmd.colorscheme 'kanagawa-dragon'
 
 g.NERDSpaceDelims = 1
 g.NERDCustomDelimiters = {
@@ -80,7 +80,7 @@ g.NERDCustomDelimiters = {
 g.user_emmet_leader_key = '<C-Z>'
 
 if vim.g.neovide then
-  vim.o.guifont = "JetBrains Mono"
+  vim.o.guifont = "JetBrains Mono:h13"
   vim.g.neovide_position_animation_length = 0
   vim.g.neovide_cursor_animation_length = 0
   vim.g.neovide_scroll_animation_length = 0
