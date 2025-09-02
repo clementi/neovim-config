@@ -93,18 +93,24 @@ require("lazy").setup({
     },
     { 'romgrk/barbar.nvim' },
     { 'leafgarland/typescript-vim' },
-    { 'kaicataldo/material.vim' },
+    -- { 'kaicataldo/material.vim' },
     -- { 'rebelot/kanagawa.nvim' },
     -- { 'EdenEast/nightfox.nvim' },
     -- { 'joshdick/onedark.vim' },
-    { 'navarasu/onedark.nvim',
-      priority = 1000,
-      config = function()
-        require('onedark').setup {
-          style = 'darker'
-        }
-        require('onedark').load()
-      end
+    -- { 'navarasu/onedark.nvim',
+      -- priority = 1000,
+      -- config = function()
+        -- require('onedark').setup {
+          -- style = 'darker'
+        -- }
+        -- require('onedark').load()
+      -- end
+    -- },
+    -- {
+      -- 'marko-cerovac/material.nvim',
+    -- },
+    {
+      'RRethy/base16-nvim'
     },
     -- { 'w0ng/vim-hybrid' },
     -- { 'ColinKennedy/hybrid2.nvim' },

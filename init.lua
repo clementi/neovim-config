@@ -71,7 +71,7 @@ map('n', '<leader>s', ':lua remove_trailing_whitespace()<CR>', { desc = 'Remove 
 
 require('config.lazy')
 
--- cmd.colorscheme 'kanagawa-dragon'
+cmd.colorscheme 'base16-materia'
 
 g.NERDSpaceDelims = 1
 g.NERDCustomDelimiters = {
