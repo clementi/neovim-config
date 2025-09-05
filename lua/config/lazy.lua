@@ -109,9 +109,8 @@ require("lazy").setup({
     -- {
       -- 'marko-cerovac/material.nvim',
     -- },
-    {
-      'RRethy/base16-nvim'
-    },
+    { 'RRethy/base16-nvim' },
+    { 'catppuccin/nvim', name = "catppuccin", priority = 1000 },
     -- { 'w0ng/vim-hybrid' },
     -- { 'ColinKennedy/hybrid2.nvim' },
     { 'neovimhaskell/haskell-vim' },
@@ -124,3 +123,5 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = false },
 })
+
+vim.cmd.colorscheme "catppuccin"
