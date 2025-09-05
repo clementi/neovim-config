@@ -124,4 +124,4 @@ require("lazy").setup({
   checker = { enabled = false },
 })
 
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "catppuccin-frappe"
