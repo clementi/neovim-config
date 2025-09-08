@@ -92,6 +92,16 @@ require("lazy").setup({
       end
     },
     { 'romgrk/barbar.nvim' },
+    { 
+      'nvim-neo-tree/neo-tree.nvim',
+      branch = 'v3.x', 
+      dependencies = {
+        'nvim-lua/plenary.nvim',
+        'MunifTanjim/nui.nvim',
+        'nvim-tree/nvim-web-devicons',
+      },
+      lazy = false,
+    },
     { 'leafgarland/typescript-vim' },
     -- { 'kaicataldo/material.vim' },
     -- { 'rebelot/kanagawa.nvim' },
@@ -109,8 +119,9 @@ require("lazy").setup({
     -- {
       -- 'marko-cerovac/material.nvim',
     -- },
-    { 'RRethy/base16-nvim' },
+    -- { 'RRethy/base16-nvim' },
     { 'catppuccin/nvim', name = "catppuccin", priority = 1000 },
+    { 'clementi/ghostty-dark.nvim', priority = 1000 },
     -- { 'w0ng/vim-hybrid' },
     -- { 'ColinKennedy/hybrid2.nvim' },
     { 'neovimhaskell/haskell-vim' },
@@ -124,4 +135,4 @@ require("lazy").setup({
   checker = { enabled = false },
 })
 
-vim.cmd.colorscheme "catppuccin-frappe"
+vim.cmd.colorscheme 'ghostty-dark'
