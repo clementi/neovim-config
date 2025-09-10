@@ -120,8 +120,17 @@ require("lazy").setup({
       -- 'marko-cerovac/material.nvim',
     -- },
     -- { 'RRethy/base16-nvim' },
-    { 'catppuccin/nvim', name = "catppuccin", priority = 1000 },
-    { 'clementi/ghostty-dark.nvim', priority = 1000 },
+    { 
+      'catppuccin/nvim', 
+      name = "catppuccin",
+      priority = 1000,
+      config = function()
+        require('catppuccin').setup({
+          no_italic = true,
+        })
+      end,
+    },
+    { 'clementi/ghostty-dark.nvim', priority = 1000, },
     -- { 'w0ng/vim-hybrid' },
     -- { 'ColinKennedy/hybrid2.nvim' },
     { 'neovimhaskell/haskell-vim' },
@@ -135,4 +144,4 @@ require("lazy").setup({
   checker = { enabled = false },
 })
 
-vim.cmd.colorscheme 'ghostty-dark'
+vim.cmd.colorscheme 'catppuccin-frappe'
