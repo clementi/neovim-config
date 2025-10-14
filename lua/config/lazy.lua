@@ -103,23 +103,24 @@ require("lazy").setup({
       lazy = false,
     },
     { 'leafgarland/typescript-vim' },
-    -- { 'kaicataldo/material.vim' },
-    -- { 'rebelot/kanagawa.nvim' },
-    -- { 'EdenEast/nightfox.nvim' },
-    -- { 'joshdick/onedark.vim' },
-    -- { 'navarasu/onedark.nvim',
-      -- priority = 1000,
-      -- config = function()
-        -- require('onedark').setup {
-          -- style = 'darker'
-        -- }
-        -- require('onedark').load()
-      -- end
-    -- },
-    -- {
-      -- 'marko-cerovac/material.nvim',
-    -- },
-    -- { 'RRethy/base16-nvim' },
+    {
+      'nvim-telescope/telescope.nvim',
+      dependencies = {
+        'https://git.myzel394.app/Myzel394/jsonfly.nvim',
+      },
+      config = function()
+        require('telescope').load_extension('jsonfly')
+      end,
+      keys = {
+        {
+          '<leader>j',
+          '<cmd>Telescope jsonfly<cr>',
+          desc = 'Optn json(fly)',
+          ft = { 'json', 'xml', 'yaml' },
+          mode = 'n',
+        }
+      }
+    },
     { 
       'catppuccin/nvim', 
       name = "catppuccin",
@@ -145,3 +146,36 @@ require("lazy").setup({
 })
 
 vim.cmd.colorscheme 'catppuccin-frappe'
+
+-- Open URL under cursor with gx
+vim.api.nvim_set_keymap(
+  'n',
+  'gx',
+  [[:lua _G.open_url_under_cursor()<CR>]],
+  { noremap = true, silent = true }
+)
+
+-- Function to open URL under cursor
+function _G.open_url_under_cursor()
+  -- Get the current word under cursor
+  local word = vim.fn.expand('<cWORD>')
+
+  -- Attempt to extract URL inside parentheses, brackets, or quotes
+  local url = word:match("https?://[%w-_%.%?%.:/%+=&]+")
+  
+  if url then
+    local open_cmd
+    if vim.fn.has('mac') == 1 then
+      open_cmd = 'open'
+    elseif vim.fn.has('unix') == 1 then
+      open_cmd = 'xdg-open'
+    else
+      print('Unsupported OS')
+      return
+    end
+    vim.fn.jobstart({open_cmd, url}, {detach = true})
+  else
+    print('No valid URL under cursor')
+  end
+end
+
