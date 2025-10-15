@@ -145,7 +145,7 @@ require("lazy").setup({
   checker = { enabled = false },
 })
 
-vim.cmd.colorscheme 'catppuccin-frappe'
+vim.cmd.colorscheme 'catppuccin-macchiato'
 
 -- Open URL under cursor with gx
 vim.api.nvim_set_keymap(
