@@ -17,6 +17,7 @@ opt.shiftwidth = 4
 opt.shortmess = opt.shortmess + 'I'
 opt.tabstop = 4
 opt.termguicolors = true
+opt.cursorline = true
 
 local function map(mode, lhs, rhs, opts)
   local options = { noremap = true, silent = true }

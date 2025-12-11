@@ -98,6 +98,7 @@ require("lazy").setup({
             'latex',
             'lua',
             'nu',
+            'jinja',
             'python',
             'racket',
             'rust',
