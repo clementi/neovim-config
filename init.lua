@@ -81,7 +81,7 @@ g.NERDCustomDelimiters = {
 g.user_emmet_leader_key = '<C-Z>'
 
 if vim.g.neovide then
-  vim.o.guifont = "JetBrains Mono:h13"
+  vim.o.guifont = "JetBrains Mono:h10"
   vim.g.neovide_position_animation_length = 0
   vim.g.neovide_cursor_animation_length = 0
   vim.g.neovide_scroll_animation_length = 0
