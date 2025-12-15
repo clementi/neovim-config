@@ -81,7 +81,12 @@ g.NERDCustomDelimiters = {
 g.user_emmet_leader_key = '<C-Z>'
 
 if vim.g.neovide then
-  vim.o.guifont = "JetBrains Mono:h10"
+  local font_size = 13
+  if vim.loop.os_uname().sysname == 'Darwin' then
+    vont_size = 10
+  end
+
+  vim.o.guifont = string.format("JetBrains Mono:h%d", font_size)
   vim.g.neovide_position_animation_length = 0
   vim.g.neovide_cursor_animation_length = 0
   vim.g.neovide_scroll_animation_length = 0
