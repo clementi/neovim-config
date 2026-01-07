@@ -28,7 +28,6 @@ require("lazy").setup({
     { 'airblade/vim-gitgutter' },
     { 'editorconfig/editorconfig-vim' },
     { 'jiangmiao/auto-pairs' },
-    { 'mattn/emmet-vim' },
     { 'preservim/nerdcommenter' },
     { 'tpope/vim-surround' },
     { 'ibhagwan/fzf-lua',
