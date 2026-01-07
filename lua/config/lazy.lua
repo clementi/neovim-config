@@ -56,6 +56,15 @@ require("lazy").setup({
         })
       end
     },
+    {
+      'serhez/bento.nvim',
+      opts = {},
+    },
+    {
+      'shadyalfred/electric-quotes.nvim',
+      dependencies = { 'uga-rosa/utf8.nvim' },
+      cmd = 'ElectricQuotesToggle',
+    },
     -- {
       -- "scalameta/nvim-metals",
       -- ft = { "scala", "sbt", "java" },
