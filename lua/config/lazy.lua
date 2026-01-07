@@ -34,17 +34,17 @@ require("lazy").setup({
       dependencies = { 'nvim-tree/nvim-web-devicons' },
       opts = {},
     },
-    { 'mistweaverco/kulala.nvim',
-      keys = {
-        { "<leader>Rs", desc = "Send request" },
-        { "<leader>Ra", desc = "Send all requests" },
-        { "<leader>Rb", desc = "Open scratchpad" },
-      },
-      ft = {"http", "rest"},
-      opts = {
-        global_keymaps = true,
-      },
-    },
+    -- { 'mistweaverco/kulala.nvim',
+      -- keys = {
+        -- { "<leader>Rs", desc = "Send request" },
+        -- { "<leader>Ra", desc = "Send all requests" },
+        -- { "<leader>Rb", desc = "Open scratchpad" },
+      -- },
+      -- ft = {"http", "rest"},
+      -- opts = {
+        -- global_keymaps = true,
+      -- },
+    -- },
     { 'nvim-lualine/lualine.nvim',
       dependencies = { 
         'nvim-tree/nvim-web-devicons'
@@ -66,6 +66,25 @@ require("lazy").setup({
     },
     { 'nvim-treesitter/nvim-treesitter',
       build = ':TSUpdate',
+      opts = function(_, opts)
+        require("nvim-treesitter.install").prefer_git = true
+
+        if opts.ensure_installed then
+          table.insert(opts.ensure_installed, 'context')
+        end
+        local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
+
+        parser_configs.context = {
+          install_info = {
+            url = 'https://github.com/pmazaitis/tree-sitter-context',
+            files = { 'src/parser.c', 'src/scanner.c' },
+            branch = 'main',
+            generate_requires_npm = false,
+            requires_generate_from_grammar = false,
+          },
+          filetype = 'context',
+        }
+      end,
       config = function()
         local configs = require('nvim-treesitter.configs')
 
