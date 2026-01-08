@@ -91,7 +91,7 @@ require("lazy").setup({
         configs.setup({
           ensure_installed = { 
             'c',
-            -- 'context',
+            'context',
             'cpp',
             'go',
             'haskell',
