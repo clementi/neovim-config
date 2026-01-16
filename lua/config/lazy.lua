@@ -176,6 +176,14 @@ require("lazy").setup({
 
 vim.cmd.colorscheme 'catppuccin-macchiato'
 
+-- Refresh filetype detection
+vim.api.nvim_set_keymap(
+  'n',
+  '<F10>',
+  [[:filetype detect<CR>]],
+  { noremap = true, silent = true }
+)
+
 -- Open URL under cursor with gx
 vim.api.nvim_set_keymap(
   'n',
