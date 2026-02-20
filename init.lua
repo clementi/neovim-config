@@ -72,12 +72,6 @@ map('n', '<leader>s', ':lua remove_trailing_whitespace()<CR>', { desc = 'Remove 
 
 require('config.lazy')
 
---cmd.colorscheme 'base16-materia'
-
-g.NERDSpaceDelims = 1
-g.NERDCustomDelimiters = {
-  jsonc = { left = '//', right = '' }
-}
 g.user_emmet_leader_key = '<C-Z>'
 
 if vim.g.neovide then

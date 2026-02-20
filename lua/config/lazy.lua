@@ -28,7 +28,6 @@ require("lazy").setup({
     { 'airblade/vim-gitgutter' },
     { 'editorconfig/editorconfig-vim' },
     { 'jiangmiao/auto-pairs' },
-    { 'preservim/nerdcommenter' },
     { 'tpope/vim-surround' },
     { 'factor/factor.vim' },
     { 'ibhagwan/fzf-lua',
@@ -94,6 +93,7 @@ require("lazy").setup({
             'c',
             'context',
             'cpp',
+            'css',
             'go',
             'haskell',
             'html',
@@ -124,6 +124,7 @@ require("lazy").setup({
         })
       end
     },
+    { 'JoosepAlviste/nvim-ts-context-commentstring' },
     { 'romgrk/barbar.nvim' },
     { 
       'nvim-neo-tree/neo-tree.nvim',
