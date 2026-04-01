@@ -124,7 +124,7 @@ require("lazy").setup({
         })
       end
     },
-    { 'JoosepAlviste/nvim-ts-context-commentstring' },
+    -- { 'JoosepAlviste/nvim-ts-context-commentstring' },
     { 'romgrk/barbar.nvim' },
     { 
       'nvim-neo-tree/neo-tree.nvim',
