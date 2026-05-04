@@ -64,66 +64,72 @@ require("lazy").setup({
       dependencies = { 'uga-rosa/utf8.nvim' },
       cmd = 'ElectricQuotesToggle',
     },
-    { 'nvim-treesitter/nvim-treesitter',
-      build = ':TSUpdate',
-      opts = function(_, opts)
-        require("nvim-treesitter.install").prefer_git = true
-
-        if opts.ensure_installed then
-          table.insert(opts.ensure_installed, 'context')
-        end
-        local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
-
-        parser_configs.context = {
-          install_info = {
-            url = 'https://github.com/pmazaitis/tree-sitter-context',
-            files = { 'src/parser.c', 'src/scanner.c' },
-            branch = 'main',
-            generate_requires_npm = false,
-            requires_generate_from_grammar = false,
-          },
-          filetype = 'context',
-        }
-      end,
+    {
+      'arborist-ts/arborist.nvim',
       config = function()
-        local configs = require('nvim-treesitter.configs')
-
-        configs.setup({
-          ensure_installed = { 
-            'c',
-            'context',
-            'cpp',
-            'css',
-            'go',
-            'haskell',
-            'html',
-            'java',
-            'javascript',
-            'json',
-            'jsonc',
-            'latex',
-            'lua',
-            'nu',
-            'janet_simple',
-            'jinja',
-            'python',
-            'racket',
-            'rust',
-            'scala',
-            'scheme',
-            'typescript',
-            'typst',
-            'vim',
-            'vimdoc',
-            'xml',
-            'zig',
-          },
-          sync_install = false,
-          highlight = { enable = true },
-          indent = { enable = true },
-        })
+        require('arborist').setup()
       end
     },
+    -- { 'nvim-treesitter/nvim-treesitter',
+    --   build = ':TSUpdate',
+    --   opts = function(_, opts)
+    --     require("nvim-treesitter.install").prefer_git = true
+    --
+    --     if opts.ensure_installed then
+    --       table.insert(opts.ensure_installed, 'context')
+    --     end
+    --     local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
+    --
+    --     parser_configs.context = {
+    --       install_info = {
+    --         url = 'https://github.com/pmazaitis/tree-sitter-context',
+    --         files = { 'src/parser.c', 'src/scanner.c' },
+    --         branch = 'main',
+    --         generate_requires_npm = false,
+    --         requires_generate_from_grammar = false,
+    --       },
+    --       filetype = 'context',
+    --     }
+    --   end,
+    --   config = function()
+    --     local configs = require('nvim-treesitter.configs')
+    --
+    --     configs.setup({
+    --       ensure_installed = { 
+    --         'c',
+    --         'context',
+    --         'cpp',
+    --         'css',
+    --         'go',
+    --         'haskell',
+    --         'html',
+    --         'java',
+    --         'javascript',
+    --         'json',
+    --         'jsonc',
+    --         'latex',
+    --         'lua',
+    --         'nu',
+    --         'janet_simple',
+    --         'jinja',
+    --         'python',
+    --         'racket',
+    --         'rust',
+    --         'scala',
+    --         'scheme',
+    --         'typescript',
+    --         'typst',
+    --         'vim',
+    --         'vimdoc',
+    --         'xml',
+    --         'zig',
+    --       },
+    --       sync_install = false,
+    --       highlight = { enable = true },
+    --       indent = { enable = true },
+    --     })
+    --   end
+    -- },
     -- { 'JoosepAlviste/nvim-ts-context-commentstring' },
     {
       'folke/ts-comments.nvim',
